@@ -21,20 +21,20 @@ function qsAll(selector, ctx) {
 
 (function initNavbar() {
 
-    const navbar      = qs(".navbar");
-    const heroEl      = qs(".hero");
-    const heroLogo    = qs("#hero-logo");
-    const footerEl    = qs("#footer");
+    const navbar = qs(".navbar");
+    const heroEl = qs(".hero");
+    const heroLogo = qs("#hero-logo");
+    const footerEl = qs("#footer");
 
     if (!navbar) return;
 
-    let inHeroZone    = true;
-    let inFooterZone  = false;
+    let inHeroZone = true;
+    let inFooterZone = false;
 
     /* ─── Hero-zone logic ─── */
     function updateNavbar() {
-        const heroHeight      = heroEl ? heroEl.offsetHeight : 800;
-        const scrollY         = window.scrollY;
+        const heroHeight = heroEl ? heroEl.offsetHeight : 800;
+        const scrollY = window.scrollY;
         const scrollThreshold = heroHeight * 0.65;
 
         if (scrollY < scrollThreshold) {
@@ -109,12 +109,12 @@ function qsAll(selector, ctx) {
 
 (function initExpandingMenu() {
 
-    const navbar       = qs("#navbar");
-    const menuBtn      = qs("#nav-menu-btn");
+    const navbar = qs("#navbar");
+    const menuBtn = qs("#nav-menu-btn");
     const menuBtnLabel = qs(".menu-btn-label");
-    const menuPanel    = qs("#nav-menu-panel");
-    const navLinks     = qsAll(".menu-nav-link");
-    const footerEl     = qs("#footer");
+    const menuPanel = qs("#nav-menu-panel");
+    const navLinks = qsAll(".menu-nav-link");
+    const footerEl = qs("#footer");
 
     if (!navbar || !menuBtn) return;
 
@@ -243,12 +243,12 @@ function qsAll(selector, ctx) {
 
     const sidebarItems = qsAll(".sidebar li");
     const sections = {
-        home:     qs("#home"),
-        work:     qs("#work"),
+        home: qs("#home"),
+        work: qs("#work"),
         services: qs("#services"),
-        process:  qs("#process"),
-        about:    qs("#about"),
-        contact:  qs("#contact")
+        process: qs("#process"),
+        about: qs("#about"),
+        contact: qs("#contact")
     };
 
     // Click: set active & scroll to section
@@ -299,7 +299,7 @@ function qsAll(selector, ctx) {
 (function initHero() {
 
     const heroContent = qs(".hero-content");
-    const sidebar     = qs(".sidebar");
+    const sidebar = qs(".sidebar");
 
     // Fade in on load
     window.addEventListener("load", () => {
@@ -329,7 +329,7 @@ function qsAll(selector, ctx) {
     const hero = qs(".hero");
     if (hero) {
         hero.addEventListener("mousemove", (e) => {
-            const x = (window.innerWidth  / 2 - e.clientX) / 90;
+            const x = (window.innerWidth / 2 - e.clientX) / 90;
             const y = (window.innerHeight / 2 - e.clientY) / 90;
             hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
         });
@@ -354,8 +354,8 @@ function qsAll(selector, ctx) {
     const heroBtns = qsAll(".work-btn, .hero-talk-btn a");
     heroBtns.forEach(btn => {
         btn.addEventListener("mouseenter", () => {
-            btn.style.transform   = "translateX(6px)";
-            btn.style.transition  = ".3s ease";
+            btn.style.transform = "translateX(6px)";
+            btn.style.transition = ".3s ease";
         });
         btn.addEventListener("mouseleave", () => {
             btn.style.transform = "translateX(0px)";
@@ -365,7 +365,7 @@ function qsAll(selector, ctx) {
     // Hero social hover
     qsAll(".hero-social-icons a").forEach(icon => {
         icon.addEventListener("mouseenter", () => { icon.style.transform = "translateY(-3px)"; });
-        icon.addEventListener("mouseleave", () => { icon.style.transform = "translateY(0px)";  });
+        icon.addEventListener("mouseleave", () => { icon.style.transform = "translateY(0px)"; });
     });
 
 })();
@@ -405,25 +405,25 @@ function qsAll(selector, ctx) {
     window.addEventListener("load", () => {
 
         const workContent = qs(".top-content");
-        const filters     = qs(".filters");
+        const filters = qs(".filters");
 
         if (workContent) {
-            workContent.style.opacity  = "0";
+            workContent.style.opacity = "0";
             workContent.style.transform = "translateY(30px)";
             setTimeout(() => {
                 workContent.style.transition = "all 1s ease";
-                workContent.style.opacity    = "1";
-                workContent.style.transform  = "translateY(0)";
+                workContent.style.opacity = "1";
+                workContent.style.transform = "translateY(0)";
             }, 300);
         }
 
         if (filters) {
-            filters.style.opacity  = "0";
+            filters.style.opacity = "0";
             filters.style.transform = "translateY(20px)";
             setTimeout(() => {
                 filters.style.transition = "all 1s ease";
-                filters.style.opacity    = "1";
-                filters.style.transform  = "translateY(0)";
+                filters.style.opacity = "1";
+                filters.style.transform = "translateY(0)";
             }, 500);
         }
 
@@ -445,7 +445,7 @@ function qsAll(selector, ctx) {
         entries.forEach((entry, idx) => {
             if (entry.isIntersecting) {
                 setTimeout(() => {
-                    entry.target.style.opacity   = "1";
+                    entry.target.style.opacity = "1";
                     entry.target.style.transform = "translateY(0)";
                 }, idx * 80);
                 svcObserver.unobserve(entry.target);
@@ -454,7 +454,7 @@ function qsAll(selector, ctx) {
     }, { threshold: 0.12 });
 
     serviceCards.forEach(card => {
-        card.style.opacity   = "0";
+        card.style.opacity = "0";
         card.style.transform = "translateY(25px)";
         card.style.transition = "all 0.8s cubic-bezier(.22,.61,.36,1)";
         svcObserver.observe(card);
@@ -516,7 +516,7 @@ function qsAll(selector, ctx) {
     // Arrow micro-interaction
     qsAll(".process-arrow").forEach(arrow => {
         arrow.addEventListener("mouseenter", () => { arrow.style.transform = "translateX(10px)"; });
-        arrow.addEventListener("mouseleave", () => { arrow.style.transform = "translateX(0px)";  });
+        arrow.addEventListener("mouseleave", () => { arrow.style.transform = "translateX(0px)"; });
     });
 
     // Subtle parallax on heading
@@ -575,43 +575,44 @@ function qsAll(selector, ctx) {
 (function initContact() {
 
     // Contact form submission
+    // Contact form submission
     const form = qs("#contact-form");
 
     if (form) {
         form.addEventListener("submit", (e) => {
-            e.preventDefault();
 
-            const name    = qs("#contact-name")?.value.trim();
-            const email   = qs("#contact-email-field")?.value.trim();
+            const name = qs("#contact-name")?.value.trim();
+            const email = qs("#contact-email-field")?.value.trim();
             const message = qs("#contact-message")?.value.trim();
 
             if (!name || !email || !message) {
+                e.preventDefault();
                 alert("Please fill all required fields.");
                 return;
             }
 
-            alert("Message Sent Successfully!");
-            form.reset();
+            // FormSubmit ko submit hone do
+            alert("Sending Message...");
         });
     }
 
     // Info card hover
     qsAll(".info-card").forEach(card => {
         card.addEventListener("mouseenter", () => { card.style.transform = "translateY(-6px)"; });
-        card.addEventListener("mouseleave", () => { card.style.transform = "translateY(0)";    });
+        card.addEventListener("mouseleave", () => { card.style.transform = "translateY(0)"; });
     });
 
     // Contact socials hover
     qsAll(".contact-socials a").forEach(icon => {
         icon.addEventListener("mouseenter", () => { icon.style.transform = "translateY(-4px)"; });
-        icon.addEventListener("mouseleave", () => { icon.style.transform = "translateY(0)";    });
+        icon.addEventListener("mouseleave", () => { icon.style.transform = "translateY(0)"; });
     });
 
     // Send button hover
     const sendBtn = qs(".send-btn");
     if (sendBtn) {
         sendBtn.addEventListener("mouseenter", () => { sendBtn.style.transform = "translateX(8px)"; });
-        sendBtn.addEventListener("mouseleave", () => { sendBtn.style.transform = "translateX(0)";   });
+        sendBtn.addEventListener("mouseleave", () => { sendBtn.style.transform = "translateX(0)"; });
     }
 
 })();
@@ -659,19 +660,19 @@ function qsAll(selector, ctx) {
     const cta = qs("#footer-cta");
     if (cta) {
         cta.addEventListener("mouseenter", () => { cta.style.transform = "translateX(8px)"; });
-        cta.addEventListener("mouseleave", () => { cta.style.transform = "translateX(0)";   });
+        cta.addEventListener("mouseleave", () => { cta.style.transform = "translateX(0)"; });
     }
 
     // Footer social links hover
     qsAll(".footer-social-links a").forEach(link => {
         link.addEventListener("mouseenter", () => { link.style.transform = "translateY(-4px)"; });
-        link.addEventListener("mouseleave", () => { link.style.transform = "translateY(0)";    });
+        link.addEventListener("mouseleave", () => { link.style.transform = "translateY(0)"; });
     });
 
     // Footer column links hover
     qsAll(".footer-column a").forEach(link => {
         link.addEventListener("mouseenter", () => { link.style.opacity = "0.6"; });
-        link.addEventListener("mouseleave", () => { link.style.opacity = "1";   });
+        link.addEventListener("mouseleave", () => { link.style.opacity = "1"; });
     });
 
 })();
